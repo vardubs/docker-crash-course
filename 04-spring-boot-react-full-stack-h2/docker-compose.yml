@@ -12,10 +12,10 @@ version: '3.7'
 # {"auths":{},"stackOrchestrator":"swarm"}
 services:
   todo-frontend:
-    image: in28min/todo-front-end:0.0.1-SNAPSHOT
-    #build:
-      #context: frontend/todo-app
-      #dockerfile: Dockerfile
+    #image: in28min/todo-front-end:0.0.1-SNAPSHOT
+    build:
+      context: frontend/todo-app
+      dockerfile: Dockerfile
     ports:
       - "4200:80"
     restart: always
@@ -25,7 +25,10 @@ services:
       - fullstack-application-network
 
   todo-api:
-    image: in28min/rest-api-full-stack:0.0.1-SNAPSHOT
+    #image: in28min/rest-api-full-stack:0.0.1-SNAPSHOT
+    build:
+      context: restful-web-services
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     restart: always

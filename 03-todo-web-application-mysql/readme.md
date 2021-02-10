@@ -75,10 +75,13 @@ private String desc;
 docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=dummytodos --env MYSQL_DATABASE=todos --name mysql --publish 3306:3306 mysql:5.7
 ```
 
+# mysql -h 127.0.0.1 -P 3306 -u root -p
+
 Using Custom Network
 
 ```
-docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=dummytodos --env MYSQL_DATABASE=todos --name mysql --publish 3306:3306 --network=web-application-mysql-network mysql:5.7
+docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=dummytodos --env MYSQL_DATABASE=todos --name mysql --publish 3306:3306 
+  --network=web-application-mysql-network mysql:5.7
 ```
 
 Using a Volume
@@ -116,6 +119,8 @@ docker inspect web-application-mysql-network
 >The host networking driver only works on Linux hosts, and is not supported on Docker Desktop for Mac, Docker Desktop for Windows, or Docker EE for Windows Server.
 
 ### My SQL Shell Client
+
+- mysql -h 127.0.0.1 -P 3306 -u root -p
 
 - https://dev.mysql.com/downloads/shell/
 

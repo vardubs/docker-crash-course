@@ -37,7 +37,7 @@ docker-compose.yml
 version: '3.7'
 services:
   currency-exchange-service:
-    image: in28min/currency-exchange-service:0.0.1-SNAPSHOT
+    image: vardubs/currency-exchange-service:0.0.1-SNAPSHOT
     ports:
       - "8000:8000"
     restart: always
@@ -45,7 +45,7 @@ services:
       - currency-compose-network
 
   currency-conversion-service:
-    image: in28min/currency-conversion-service:0.0.1-SNAPSHOT
+    image: vardubs/currency-conversion-service:0.0.1-SNAPSHOT
     ports:
       - "8100:8100"
     restart: always
@@ -55,6 +55,10 @@ services:
       - currency-exchange-service
     networks:
       - currency-compose-network
+
+# Networks to be created to facilitate communication between containers
+networks:
+  currency-compose-network:
 
 ```
 

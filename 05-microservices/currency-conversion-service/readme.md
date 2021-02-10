@@ -3,6 +3,8 @@ Run com.in28minutes.microservices.currencyconversionservice.CurrencyConversionSe
 
 ## Resources
 
+- http://localhost:8761/
+- http://localhost:8000/currency-exchange/from/USD/to/INR
 - http://localhost:8100/currency-converter/from/EUR/to/INR/quantity/10
 
 ```json
